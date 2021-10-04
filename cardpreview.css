@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&display=swap'); /* Font for the titles */
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&family=Lexend+Deca:wght@200&display=swap'); /* font for the p tag */
 
-
+/* here we've created a global scope, because as we know in every language we can declare global and local variables.
+First: we create a variable with global scope inside the :root selector. The :root selector matches the document's root element.
+Second: -- BrightOrange and the rest are called variables, so they must be preceeded by -- */
 :root {
   --BrightOrange: hsl(31, 77%, 52%);
   --DarkCyan: hsl(184, 100%, 22%);
@@ -11,11 +13,20 @@
   --VeryLightGray: hsl(0, 0%, 95%);
 }
 
+/* the star is a selector and selects all elements and set them depending what's inside
+box-sizing: when you set width and height , you have to adjust the value you give to allow for any border or padding that may be added
+margin: defines space around elements */
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; 
   margin: 0;
 }
 
+/* the main content of the document
+width: 100vw --> instead of 100% because we are using a viewport and 100% will fit all the space available
+display: flex --> it expands items to fill available free space or shrinks them to prevent overflow 
+flex-direction: column --> is used when display is flex and specifies the direction of the flexible items
+justify-content --> how the browser distributes space between and around content item
+position: relative --> relative places an element relative to its current position without changing the layout around it */
 main {
   width: 100vw;
   display: flex;
@@ -27,22 +38,24 @@ main {
 
 .card_preview {
   width: 90%;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 100px; /* sets the top margin of an element */
+  margin-bottom: 100px; /* sets the bottom margin of an element */
+  /* or we can write margin: 100px 0px 100px 0px. The 0px refers to right and left respectfully */
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  overflow: hidden;
+  overflow: hidden; /* the content will be invisible */
 }
 
 .column {
   height: 500px;
-  padding: 50px;
+  padding: 50px; /* creating space around an element's content */
   display: flex;
   flex-direction: column;
   position: relative;
 }
+/* in these three classes we created a local variable in each, by using the var function var(--name of variable) */
 .sedans {
   background-color: var(--BrightOrange);
 }
@@ -81,10 +94,10 @@ main {
   margin-top: 10px;
 }
 .column p {
-  flex: 1;
+  flex: 1; /* it means that the remaining space in the container will be distributed equally to all children which are the 3 columns */
   font-family: "Lexend Deca";
   font-size: 15px;
-  line-height: 30px;
+  line-height: 30px; /* It's commonly used to set the distance between lines of text */
   color: var(--TransparentWhite);
 }
 
@@ -95,7 +108,7 @@ main {
   border-radius: 40px;
   border: none;
   margin-top: 20px;
-  cursor: pointer;
+  cursor: pointer; /* By default, when a cursor hovers over a link, the cursor changes from a pointer to a hand */
 }
 
 .column button:hover {
@@ -104,6 +117,7 @@ main {
   background-color: transparent;
 }
 
+/* same thing here we have created a local scope by using the function var */
 .button .btn1 {
   color: var(--BrightOrange);
 }
@@ -114,14 +128,15 @@ main {
   color: var(--VeryDarkCyan);
 }
 
+/* checking the height and width of the viewport */
 @media screen and (min-width: 1000px) {
   main {
-    height: 100vh;
+    height: 100vh; /* height: 100vh = 100% of the viewport height */
   }
   .card_preview {
     width: 80%;
     height: 500px;
-    flex-direction: row;
+    flex-direction: row; /* columns are presented as rows */
     margin: 0;
   }
   .column {
