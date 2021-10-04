@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&display=swap'); /* Font for the titles */
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&family=Lexend+Deca:wght@200&display=swap'); /* font for the p tag */
+
+
+:root {
+  --BrightOrange: hsl(31, 77%, 52%);
+  --DarkCyan: hsl(184, 100%, 22%);
+  --VeryDarkCyan: hsl(179, 100%, 13%);
+
+  --TransparentWhite: hsla(0, 0%, 100%, 0.75);
+  --VeryLightGray: hsl(0, 0%, 95%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+main {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card_preview {
+  width: 90%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.column {
+  height: 500px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.sedans {
+  background-color: var(--BrightOrange);
+}
+.suvs {
+  background-color: var(--DarkCyan);
+}
+.luxury {
+  background-color: var(--VeryDarkCyan);
+}
+
+.logo {
+  margin: 0px 0px 20px 0px;
+  height: 60px;
+  width: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.sedans .logo {
+  background-image: url(./images/icon-sedans.svg);
+}
+.suvs .logo {
+  background-image: url(./images/icon-suvs.svg);
+}
+.luxury .logo {
+  background-image: url(./images/icon-luxury.svg);
+}
+
+.column h1 {
+  font-family: "Big Shoulders Display";
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--VeryLightGray);
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  margin-top: 10px;
+}
+.column p {
+  flex: 1;
+  font-family: "Lexend Deca";
+  font-size: 15px;
+  line-height: 30px;
+  color: var(--TransparentWhite);
+}
+
+.column button {
+  font-family: "Lexend Deca";
+  height: 50px;
+  width: 150px;
+  border-radius: 40px;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.column button:hover {
+  color: white;
+  border: white 2px solid;
+  background-color: transparent;
+}
+
+.button .btn1 {
+  color: var(--BrightOrange);
+}
+.button .btn2 {
+  color: var(--DarkCyan);
+}
+.button .btn3 {
+  color: var(--VeryDarkCyan);
+}
+
+@media screen and (min-width: 1000px) {
+  main {
+    height: 100vh;
+  }
+  .card_preview {
+    width: 80%;
+    height: 500px;
+    flex-direction: row;
+    margin: 0;
+  }
+  .column {
+    padding: 50px 80px;
+  }
+}
